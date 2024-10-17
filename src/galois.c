@@ -49,11 +49,12 @@
 #include <string.h>
 #include <errno.h>
 #include <assert.h>
+#include <threads.h>
 
 #include "galois.h"
 
 #define MAX_GF_INSTANCES 64
-gf_t *gfp_array[MAX_GF_INSTANCES] = { 0 };
+thread_local gf_t *gfp_array[MAX_GF_INSTANCES] = { 0 };
 int  gfp_is_composite[MAX_GF_INSTANCES] = { 0 };
 
 gf_t *galois_get_field_ptr(int w)
