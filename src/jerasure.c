@@ -552,6 +552,11 @@ int *jerasure_erasures_to_erased(int k, int m, int *erasures)
   }
   return erased;
 }
+
+void jerasure_free_matrix(int *matrix)
+{
+  free(matrix);
+}
   
 void jerasure_free_schedule(int **schedule)
 {
